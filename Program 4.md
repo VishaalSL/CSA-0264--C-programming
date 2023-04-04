@@ -1,16 +1,20 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char c;
+    char str[100];
+    int i, count = 0;
+    printf("Enter a string: ");
+    gets(str);
 
-    printf("Enter a character: ");
-    scanf("%c", &c);
-
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-        printf("%c is an alphabet.", c);
-    } else {
-        printf("%c is not an alphabet.", c);
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+            count++;
+        }
     }
+
+    printf("Number of vowels in the string: %d", count);
 
     return 0;
 }
